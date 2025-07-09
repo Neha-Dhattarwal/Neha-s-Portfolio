@@ -1,6 +1,9 @@
 Neha's Personal Portfolio Website
 This is the source code for Neha's personal portfolio website, showcasing her skills, projects, and professional background. The website is designed to be visually appealing, responsive, and interactive, providing a comprehensive overview of her work as a passionate developer.
 
+🚀 [Live Demo](https://neha-s-portfolio.vercel.app/)
+
+
 Table of Contents
 Features
 
@@ -109,8 +112,6 @@ Contact
 For any inquiries or collaborations, feel free to reach out:
 
 Email: nehadhattarwal19@gmail.com
-
-Phone: +91 7015855490
 
 LinkedIn: linkedin.com/in/neha-dhattarwal-77020431b/
 
