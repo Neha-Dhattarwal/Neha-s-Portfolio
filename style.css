@@ -1,0 +1,211 @@
+/* Custom CSS */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000000; /* Pure black background for pixel-perfect match */
+    color: #e0e0e0; /* Light text color */
+    scroll-behavior: smooth;
+}
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom styles for 3D-like elements (now using real images) */
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 5xl; /* Matches the max-width of the flex container */
+    height: 96; /* Matches the height of the flex container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.hero-image-placeholder { /* Renamed to reflect it's now a container for the actual image */
+    background-color: transparent; /* No background needed for actual images */
+    border-radius: 9999px; /* Make it circular */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.7), 0 0 10px rgba(153, 102, 204, 0.5); /* Subtle shadow */
+}
+.hero-image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(66, 153, 225, 0.1), rgba(153, 102, 204, 0.1)); /* Very subtle gradient overlay */
+    mix-blend-mode: overlay;
+    pointer-events: none; /* Ensure it doesn't block interaction */
+}
+
+
+/* Specific styling for the app showcase section to mimic the design */
+.app-showcase-card {
+    background-color: #1a1a1a; /* Darker background for cards */
+    border-radius: 1.5rem; /* Rounded corners */
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.app-showcase-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+.app-showcase-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(153, 102, 204, 0.05), rgba(66, 153, 225, 0.05)); /* Very subtle gradient overlay */
+    pointer-events: none;
+}
+
+/* Keyframe for scroll down animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.animate-bounce-slow {
+    animation: bounce 2s infinite;
+}
+
+/* Custom styles for button hover effects */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Flipping Card Styles for Skills Section */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 280px; /* Fixed height for consistency */
+    perspective: 1000px; /* 3D effect */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 1.5rem; /* Match parent card border radius */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.flip-card-front {
+    background-color: #1a1a1a; /* Dark background for front */
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.flip-card-back {
+    background-color: #2a2a2a; /* Slightly lighter dark for back */
+    color: white;
+    transform: rotateY(180deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.flip-card-back ul {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+.flip-card-back ul li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.flip-card-back ul li::before {
+    content: '•'; /* Custom bullet point */
+    color: #8b5cf6; /* Purple color for bullet */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-size: 1.2em;
+}
+
+/* Specific styles for the new About Me section */
+.about-me-container {
+    background-color: #1a1a1a; /* Dark background for the main container */
+    border-radius: 2rem; /* More rounded corners */
+    padding: 3rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle border */
+}
+
+.about-me-profile-img {
+    border-radius: 1.5rem; /* Rounded corners for the image itself */
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.about-me-section-heading {
+    color: #d1d5db; /* Light gray for subheadings */
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: 600; /* Semi-bold */
+    margin-bottom: 1rem;
+}
+.about-me-item-title {
+    color: #e5e7eb; /* Slightly lighter text for titles */
+    font-weight: 500;
+}
+.about-me-item-description {
+    color: #9ca3af; /* Gray text for descriptions */
+    font-size: 0.95rem;
+}
+.about-me-skill-tag {
+    background-color: #2d2d2d; /* Darker background for skill tags */
+    color: #e0e0e0;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+.about-me-skill-tag:hover {
+    background-color: #3a3a3a;
+}
